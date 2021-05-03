@@ -12,3 +12,6 @@ def contacts(request):
     return render(request, 'testApp/contacts.html', {'values':['Если у вас есть вопросы, вы можете их задать по телефону', '8-923-388-44-55']})
 
 # Create your views here.
+
+
+# Create your views here.
