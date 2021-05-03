@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заголовок страницы</title>
+{% load static %}
+    <Link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css"></Link>
+</head>
+<body>
+   <div class="jumbotron">
+    <div class="container">
+        <h1>Wrapper  header</h1>
+        {% block content %}
+        {% endblock %}         
+        <p>
+            <a href="/testApp/1" class="btn btn-success btn-lg">Home page</a>
+            <a href="/testApp/1" class="btn btn-primary btn-lg">News</a>
+            <a href="/testApp/contacts" class="btn btn-info btn-lg">Contacts</a>
+        </p>
+    </div>
+   </div>
+   <div class="container">
+       <img src="{% static 'testApp/image/kaf3.jpg' %}" class="img-thumbnail">
+   </div>
+</body>
+</html>
