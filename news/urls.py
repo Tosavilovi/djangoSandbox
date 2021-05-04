@@ -1,9 +1,8 @@
-from django.conf.urls import url
-from . import views
+from django.conf.urls import url, include
+from django.views.generic import ListView, DetailView
+from news.models import Articles
 
 urlpatterns = [
-    url(r'^$', views.index, name="index"),
-    url(r'1/$', views.index_html, name="index"),
-    url(r'contacts/$', views.contacts, name="contact")
-    
+    url(r'^$', ListView.as_view(queryset=Articles.objects.all().order_by("-date")[:20], template_name="news/posts.html")),
+    url(r'^(?P<pk>\d+)$', DetailView.as_view(model=Articles, template_name="news/post.html"))
 ]
